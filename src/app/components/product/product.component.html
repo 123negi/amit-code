@@ -1,0 +1,13 @@
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <input type = "text" name = "fullName" placeholder = "Your full name" formControlName="title" >
+    <br/>
+    
+    <input type = "email" name = "email" placeholder = "Your email" formControlName="description" >
+    <br/>
+    
+    <textarea name = "message" placeholder = "Your message" formControlName="price" ></textarea>
+    <br/>
+    <input type = "submit" value = "Send">
+    <input type = "submit" value = "back"  (click)="valueChanged()">
+  </form>
+  
