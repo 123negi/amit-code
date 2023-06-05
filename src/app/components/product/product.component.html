@@ -1,13 +1,30 @@
-<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-    <input type = "text" name = "fullName" placeholder = "Your full name" formControlName="title" >
-    <br/>
-    
-    <input type = "email" name = "email" placeholder = "Your email" formControlName="description" >
-    <br/>
-    
-    <textarea name = "message" placeholder = "Your message" formControlName="price" ></textarea>
-    <br/>
-    <input type = "submit" value = "Send">
-    <input type = "submit" value = "back"  (click)="valueChanged()">
-  </form>
-  
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="container">
+  <div class="product-detail">
+    <div class="product-image">
+      <img src="{{uniqueProduct?.thumbnail}}" alt="Product Image">
+    </div>
+    <div class="product-info">
+      <h1 class="product-title" *ngIf="showEdit">{{uniqueProduct?.title}}</h1>
+      <input type="text" name="title"*ngIf="!showEdit"  placeholder="Title" formControlName="title">
+      <p class="product-price" *ngIf="showEdit">Price: {{uniqueProduct?.price}}</p>
+      <input type="text" name="price"*ngIf="!showEdit"  placeholder="Price" formControlName="price">
+      <p class="product-rating" *ngIf="showEdit">Rating: {{uniqueProduct?.rating}}</p>
+      <input type="text" *ngIf="!showEdit" name="rating" placeholder="rating" formControlName="rating">
+      <p class="product-rating" *ngIf="showEdit">Description: {{uniqueProduct?.description}}</p>
+      <textarea name="description"  *ngIf="!showEdit" placeholder="Description" formControlName="description"></textarea>
+      <p class="product-stock" *ngIf="showEdit">Stock: {{uniqueProduct?.stock}}</p>
+      <input type="text" *ngIf="!showEdit" name="stock" placeholder="stock" formControlName="stock">
+
+      <p class="discount-label" *ngIf="showEdit">Discount: {{uniqueProduct?.discountPercentage}} off</p>
+      <input type="text" *ngIf="!showEdit" name="Discount" placeholder="Discount" formControlName="discountPercentage">
+
+      <input type="submit" value="Send">
+      <input type="button" value="Back" (click)="valueChanged()">
+    </div>
+  </div>
+  <i class="fa fa-edit" style="font-size:24px" *ngIf ="showEdit" (click)="editPage()"></i>
+
+</form>
+
+
+ 

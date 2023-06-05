@@ -10,6 +10,7 @@ import { ProductFacade } from 'src/app/store/product/product.facade';
 export class ProductComponent implements OnInit, OnChanges {
   contactForm!: FormGroup;
   @Output() valueChange = new EventEmitter();
+  showEdit = true;
   constructor(private productFacade: ProductFacade, private formBuilder: FormBuilder) {}
 
   @Input() uniqueProduct: any;
@@ -25,7 +26,10 @@ export class ProductComponent implements OnInit, OnChanges {
     this.contactForm = this.formBuilder.group({
       title: [''],  
       description: [''],
-      price: ['']
+      price: [''],
+      rating: [''],
+      stock:[''],
+      discountPercentage:['']
     });
   }
 
@@ -35,6 +39,9 @@ export class ProductComponent implements OnInit, OnChanges {
       title: this.uniqueProduct.title,
       description: this.uniqueProduct.description,
       price: this.uniqueProduct.price,
+       rating: this.uniqueProduct.rating,
+       stock: this.uniqueProduct.stock,
+       discountPercentage: this.uniqueProduct.discountPercentage,
     });
   }
   onSubmit() {
@@ -42,6 +49,10 @@ export class ProductComponent implements OnInit, OnChanges {
 } 
 valueChanged(){
   this.valueChange.emit(true);
+}
+
+editPage(){
+this.showEdit = false
 }
 
 }

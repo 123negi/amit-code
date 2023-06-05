@@ -1,34 +1,85 @@
-/* Apply some basic styling to the form */
-form {
-    width: 300px;
-    margin: 0 auto;
-  }
-  
-  /* Style the input fields and textarea */
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #f2f2f2;
-    color: #333;
-  }
-  
-  /* Style the submit buttons */
-  input[type="submit"] {
-    padding: 10px 20px;
-    background-color: #000;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  /* Add some spacing between the buttons */
-  input[type="submit"] + input[type="submit"] {
-    margin-left: 10px;
-  }
-  
+h1 {
+  color: #333;
+}
+
+.product-detail {
+  margin-bottom: 20px;
+}
+
+.product-image {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.product-image img {
+  max-width: 200px;
+}
+
+.product-info {
+  margin-top: 20px;
+}
+
+.product-title {
+  font-size: 24px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.product-price {
+  font-size: 18px;
+  color: #333;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.product-rating {
+  font-size: 16px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.product-description {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.product-stock {
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+}
+
+.discount-label {
+  font-weight: bold;
+  color: red;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="submit"],
+input[type="button"] {
+  padding: 10px 20px;
+  background-color: black;
+  margin-left: 4px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+input[type="submit"]:hover,
+input[type="button"]:hover {
+  background-color: black;
+}
+
+.container{
+  display: flex;
+  justify-content: center
+}
