@@ -41,19 +41,28 @@
     display: block;
   }
   
-  /* Accordion Image Loop */
-  .image-loop {
+
+
+  .accordion-header {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    margin-top: 10px;
+    align-items: center;
+    cursor: pointer;
   }
   
-  .image-loop img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
+  .category-name {
+    flex: 1;
   }
+  
+  .fa {
+    font-size: 20px;
+  }
+  
+  .fa-angle-down.active,
+  .fa-angle-up.active {
+    display: none;
+  }
+  
+  .fa-angle-up.active {
+    transform: rotate(180deg);
+  }
+  
